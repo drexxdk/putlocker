@@ -21,7 +21,7 @@
     var content = $("body > table:nth-of-type(2) > tbody > tr > td:first-child .content-box");
 
     // video
-    if ($("iframe + #main").length === 1) {
+    if ($("noscript + #main").length === 1) {
         $("#content").append(
             '<div id="left">' +
                 '<div id="info"></div>' +
