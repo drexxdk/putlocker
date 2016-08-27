@@ -12,6 +12,7 @@ body {
 }
 body {
   background-color: #404040;
+  background-image: initial;
 }
 body > img,
 body > table {
@@ -455,4 +456,5 @@ body .table2 {
 #main > #menu > #nav > li > a:hover {
   color: white;
   background-color: #1067A0;
+  background-image: initial!important;
 }
