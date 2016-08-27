@@ -1,5 +1,6 @@
 ﻿@import "mixins";
 @font: sans-serif;
+@theme: #2980b9;
 
 * {
     margin: 0;
@@ -19,11 +20,15 @@ body {
     > table {
         display: none;
     }
+
+    .table,
+    .table2 {
+        font-size: initial;
+        font-family: @font;
+    }
 }
 
-
-
-script + #main {
+#browse > #main {
     > #content {
         overflow: auto;
         .flex-display(inline-flex);
@@ -164,28 +169,23 @@ script + #main {
                     color: white;
                 }
             }
-
-
-
-            > .table,
-            > .table2 {
-                font-size: initial;
-                font-family: @font;
-            }
         }
     }
 }
 
-noscript + #main > #content {
+#video > #main > #content {
     .flex-display();
     .flex-grow(1);
 
     #left {
         width: 400px;
-        background-color: red;
+        background-color: #303030;
         .flex-display();
         .flex-direction(column);
         overflow: auto;
+        color: white;
+        border-right: 2px solid black;
+
 
         > * {
             .flex-shrink(0);
@@ -193,32 +193,112 @@ noscript + #main > #content {
 
         > #info {
             .flex-display();
+            padding: 5px;
+            border-bottom: 2px solid black;
 
-            > img {
-                width: 130px;
-                height: auto;
+            a {
+                color: @theme;
+            }
+
+            a:hover {
+                text-decoration: underline;
             }
 
             > table {
-                width: calc(~"100% - 130px");
+                > tbody {
+                    > tr {
+                        > td:first-child {
+                            display: none;
+                        }
+
+                        > td:last-child {
+                            padding-left: initial !important;
+                            text-align: initial !important;
+
+                            > h2 {
+                                font-size: initial !important;
+                                font-weight: initial !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        > #links {
+            background-color: #606060;
+
+
+            a {
+                color: white;
+            }
+
+            > table + table {
+                border-top: 1px dotted #909090;
+            }
+
+            > table {
+                > tbody {
+
+                    > tr {
+                        > td:first-child,
+                        > td:last-child {
+                            display: none;
+                        }
+
+                        > td:nth-child(2) {
+                            padding: initial !important;
+                            border-bottom: initial !important;
+
+                            > a {
+                                padding: 10px;
+                                display: block;
+                            }
+
+                            > a:hover {
+                                background-color: #404040;
+                            }
+                        }
+                    }
+
+
+                    > tr:not(:empty) + tr:not(:empty) > td {
+                        border-top: 1px dotted #909090;
+                    }
+                }
             }
         }
     }
 
     #right {
         .flex-grow(1);
-        background-color: blue;
         .flex-display();
         .flex-direction(column);
         overflow: auto;
 
-        #embed {
+        > h1 {
+            font-family: @font;
+            text-align: initial;
+            font-size: 16px;
+            border-bottom: 2px solid black;
+            padding-top: initial;
+            padding-bottom: initial;
+            padding-left: initial;
+            padding: 10px;
+            background-color: initial;
+
+            > strong font {
+                color: white;
+            }
+        }
+
+        > #embed {
             height: 100%;
             .flex-display();
+            background-color: black;
 
             > table {
                 height: 100%;
-                background-color: yellow;
 
                 > tbody {
                     > tr:first-child {
@@ -230,14 +310,17 @@ noscript + #main > #content {
                             > .video {
                                 padding-top: initial !important;
                                 padding-bottom: initial !important;
-                                background-color: orange;
                                 height: 100%;
 
                                 > iframe {
                                     display: block;
-                                    background-color: aqua;
-                                    width:100%;
-                                    height:100%;
+                                    width: 100%;
+                                    height: 100%;
+                                    overflow: auto;
+                                }
+
+                                > iframe:nth-of-type(2) {
+                                    display: none;
                                 }
                             }
                         }
@@ -299,7 +382,7 @@ noscript + #main > #content {
     }
 
     > #menu {
-        background-color: #2980b9;
+        background-color: @theme;
 
         > #nav {
             margin: 0 auto;

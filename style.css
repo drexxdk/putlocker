@@ -17,7 +17,12 @@ body > img,
 body > table {
   display: none;
 }
-script + #main > #content {
+body .table,
+body .table2 {
+  font-size: initial;
+  font-family: sans-serif;
+}
+#browse > #main > #content {
   overflow: auto;
   display: -webkit-inline-flex;
   display: -moz-inline-flex;
@@ -25,34 +30,34 @@ script + #main > #content {
   display: -ms-inline-flex;
   display: inline-flex;
 }
-script + #main > #content > .content-box {
+#browse > #main > #content > .content-box {
   width: initial !important;
   border: initial !important;
   background-color: initial !important;
   margin: 0 auto;
   line-height: 0;
 }
-script + #main > #content > .content-box > p,
-script + #main > #content > .content-box > h2,
-script + #main > #content > .content-box > div,
-script + #main > #content > .content-box > table {
+#browse > #main > #content > .content-box > p,
+#browse > #main > #content > .content-box > h2,
+#browse > #main > #content > .content-box > div,
+#browse > #main > #content > .content-box > table {
   display: none;
 }
-script + #main > #content > .content-box > table:nth-last-of-type(2),
-script + #main > #content > .content-box > table:last-of-type {
+#browse > #main > #content > .content-box > table:nth-last-of-type(2),
+#browse > #main > #content > .content-box > table:last-of-type {
   display: block;
 }
-script + #main > #content > .content-box > table:nth-last-of-type(2) {
+#browse > #main > #content > .content-box > table:nth-last-of-type(2) {
   width: initial;
 }
-script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr {
+#browse > #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
   display: -ms-flex;
   display: flex;
 }
-script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td {
+#browse > #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td {
   -webkit-flex-grow: 1;
   -moz-flex-grow: 1;
   -ms-flex-grow: 1;
@@ -67,10 +72,10 @@ script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > t
   padding-left: 10px !important;
   padding-right: 10px !important;
 }
-script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td > a {
+#browse > #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td > a {
   display: block;
 }
-script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td > a > img {
+#browse > #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td > a > img {
   padding: initial !important;
   border: initial !important;
   width: 130px;
@@ -78,11 +83,11 @@ script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > t
   z-index: 1;
   position: relative;
 }
-script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td > div {
+#browse > #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td > div {
   width: 130px !important;
   padding-top: 0 !important;
 }
-script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td > div > a {
+#browse > #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td > div > a {
   display: block;
   padding: 8px 5px;
   color: white;
@@ -94,7 +99,7 @@ script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > t
   text-overflow: ellipsis;
   font-size: 12px;
 }
-script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td:hover::before {
+#browse > #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td:hover::before {
   content: '';
   position: absolute;
   top: 10px;
@@ -106,7 +111,7 @@ script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > t
   -moz-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
 }
-script + #main > #content > .content-box > table:last-of-type {
+#browse > #main > #content > .content-box > table:last-of-type {
   padding: 10px 0;
   display: -webkit-flex;
   display: -moz-flex;
@@ -114,10 +119,10 @@ script + #main > #content > .content-box > table:last-of-type {
   display: -ms-flex;
   display: flex;
 }
-script + #main > #content > .content-box > table:last-of-type > tbody {
+#browse > #main > #content > .content-box > table:last-of-type > tbody {
   margin: 0 auto;
 }
-script + #main > #content > .content-box > table:last-of-type > tbody > tr > td {
+#browse > #main > #content > .content-box > table:last-of-type > tbody > tr > td {
   width: initial !important;
   height: initial !important;
   padding-left: initial !important;
@@ -133,22 +138,22 @@ script + #main > #content > .content-box > table:last-of-type > tbody > tr > td 
 	background-clip:         padding-box;*/
   overflow: hidden;
 }
-script + #main > #content > .content-box > table:last-of-type > tbody > tr > td > a {
+#browse > #main > #content > .content-box > table:last-of-type > tbody > tr > td > a {
   margin: -5px -10px;
   padding: 5px 10px;
   background-color: #606060;
   display: block;
   color: white !important;
 }
-script + #main > #content > .content-box > table:last-of-type > tbody > tr > td > a:hover {
+#browse > #main > #content > .content-box > table:last-of-type > tbody > tr > td > a:hover {
   background-color: #505050;
 }
-script + #main > #content > .content-box > h1,
-script + #main > #content > .content-box > table,
-script + #main > #content > .content-box > form {
+#browse > #main > #content > .content-box > h1,
+#browse > #main > #content > .content-box > table,
+#browse > #main > #content > .content-box > form {
   line-height: initial;
 }
-script + #main > #content > .content-box > h1 {
+#browse > #main > #content > .content-box > h1 {
   font-family: sans-serif;
   border-bottom: initial;
   padding-top: initial;
@@ -159,15 +164,10 @@ script + #main > #content > .content-box > h1 {
   color: white;
   font-size: 16px;
 }
-script + #main > #content > .content-box > h1 > strong > font {
+#browse > #main > #content > .content-box > h1 > strong > font {
   color: white;
 }
-script + #main > #content > .content-box > .table,
-script + #main > #content > .content-box > .table2 {
-  font-size: initial;
-  font-family: sans-serif;
-}
-noscript + #main > #content {
+#video > #main > #content {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
@@ -178,9 +178,9 @@ noscript + #main > #content {
   -ms-flex-grow: 1;
   flex-grow: 1;
 }
-noscript + #main > #content #left {
+#video > #main > #content #left {
   width: 400px;
-  background-color: red;
+  background-color: #303030;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
@@ -191,33 +191,73 @@ noscript + #main > #content #left {
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
+  color: white;
+  border-right: 2px solid black;
 }
-noscript + #main > #content #left > * {
+#video > #main > #content #left > * {
   -webkit-flex-shrink: 0;
   -moz-flex-shrink: 0;
   -ms-flex-shrink: 0;
   flex-shrink: 0;
 }
-noscript + #main > #content #left > #info {
+#video > #main > #content #left > #info {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
   display: -ms-flex;
   display: flex;
+  padding: 5px;
+  border-bottom: 2px solid black;
 }
-noscript + #main > #content #left > #info > img {
-  width: 130px;
-  height: auto;
+#video > #main > #content #left > #info a {
+  color: #2980b9;
 }
-noscript + #main > #content #left > #info > table {
-  width: calc(100% - 130px);
+#video > #main > #content #left > #info a:hover {
+  text-decoration: underline;
 }
-noscript + #main > #content #right {
+#video > #main > #content #left > #info > table > tbody > tr > td:first-child {
+  display: none;
+}
+#video > #main > #content #left > #info > table > tbody > tr > td:last-child {
+  padding-left: initial !important;
+  text-align: initial !important;
+}
+#video > #main > #content #left > #info > table > tbody > tr > td:last-child > h2 {
+  font-size: initial !important;
+  font-weight: initial !important;
+}
+#video > #main > #content #left > #links {
+  background-color: #606060;
+}
+#video > #main > #content #left > #links a {
+  color: white;
+}
+#video > #main > #content #left > #links > table + table {
+  border-top: 1px dotted #909090;
+}
+#video > #main > #content #left > #links > table > tbody > tr > td:first-child,
+#video > #main > #content #left > #links > table > tbody > tr > td:last-child {
+  display: none;
+}
+#video > #main > #content #left > #links > table > tbody > tr > td:nth-child(2) {
+  padding: initial !important;
+  border-bottom: initial !important;
+}
+#video > #main > #content #left > #links > table > tbody > tr > td:nth-child(2) > a {
+  padding: 10px;
+  display: block;
+}
+#video > #main > #content #left > #links > table > tbody > tr > td:nth-child(2) > a:hover {
+  background-color: #404040;
+}
+#video > #main > #content #left > #links > table > tbody > tr:not(:empty) + tr:not(:empty) > td {
+  border-top: 1px dotted #909090;
+}
+#video > #main > #content #right {
   -webkit-flex-grow: 1;
   -moz-flex-grow: 1;
   -ms-flex-grow: 1;
   flex-grow: 1;
-  background-color: blue;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
@@ -229,32 +269,48 @@ noscript + #main > #content #right {
   flex-direction: column;
   overflow: auto;
 }
-noscript + #main > #content #right #embed {
+#video > #main > #content #right > h1 {
+  font-family: sans-serif;
+  text-align: initial;
+  font-size: 16px;
+  border-bottom: 2px solid black;
+  padding-top: initial;
+  padding-bottom: initial;
+  padding-left: initial;
+  padding: 10px;
+  background-color: initial;
+}
+#video > #main > #content #right > h1 > strong font {
+  color: white;
+}
+#video > #main > #content #right > #embed {
   height: 100%;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
   display: -ms-flex;
   display: flex;
+  background-color: black;
 }
-noscript + #main > #content #right #embed > table {
+#video > #main > #content #right > #embed > table {
   height: 100%;
-  background-color: yellow;
 }
-noscript + #main > #content #right #embed > table > tbody > tr:first-child {
+#video > #main > #content #right > #embed > table > tbody > tr:first-child {
   display: none;
 }
-noscript + #main > #content #right #embed > table > tbody > tr:last-child > td > .video {
+#video > #main > #content #right > #embed > table > tbody > tr:last-child > td > .video {
   padding-top: initial !important;
   padding-bottom: initial !important;
-  background-color: orange;
   height: 100%;
 }
-noscript + #main > #content #right #embed > table > tbody > tr:last-child > td > .video > iframe {
+#video > #main > #content #right > #embed > table > tbody > tr:last-child > td > .video > iframe {
   display: block;
-  background-color: aqua;
   width: 100%;
   height: 100%;
+  overflow: auto;
+}
+#video > #main > #content #right > #embed > table > tbody > tr:last-child > td > .video > iframe:nth-of-type(2) {
+  display: none;
 }
 #main {
   display: -webkit-flex;

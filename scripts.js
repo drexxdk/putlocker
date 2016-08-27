@@ -1,4 +1,5 @@
 ﻿$(function () {
+    var body = $("body");
     var page =
         '<div id="main">' +
             '<div id="search-form">' +
@@ -8,7 +9,7 @@
             '</div>' +
             '<div id="content"></div>' +
         '</div>';
-    $(page).appendTo("body");
+    $(page).appendTo(body);
    
     var searchTextbox = $("#search > form > table > tbody > tr > td > input[type=text]");
     var searchButton = $("#search > form > table > tbody > tr > td > input[type=submit]");
@@ -21,32 +22,42 @@
     var content = $("body > table:nth-of-type(2) > tbody > tr > td:first-child .content-box");
 
     // video
-    if ($("noscript + #main").length === 1) {
+    if (body.children().first().attr("id") === "fb-root") {
+        body.attr("id", "video");
         $("#content").append(
             '<div id="left">' +
                 '<div id="info"></div>' +
+                '<div id="links"></div>' + 
             '</div>' +
             '<div id="right"></div>'
             );
         var left = $("#left");
         var right = $("#right");
         var h1 = content.find("h1");
-        var info_img = content.find("h1 + table > tbody > tr > td:first-child > table > tbody > tr:first-child > td > img");
-        var info_table = content.find("h1 + table > tbody > tr > td:last-child > table");
+        var info = content.find("h1 + table > tbody > tr > td:last-child > table");
 
         var embed = content.find("h1 + table + h2 + table");
         var links_1 = content.find("#MarketGidScriptRootC9737 + h2 + table");
         var links_2 = content.find("#MarketGidScriptRootC9737 + h2 + table + table");
 
         h1.appendTo(right);
-        info_img.appendTo(left.children("#info"));
-        info_table.appendTo(left.children("#info"));
+        info.appendTo(left.children("#info"));
         right.append('<div id="embed"></div>');
         embed.appendTo($("#embed"));
-        links_1.appendTo(left);
-        links_2.appendTo(left);
+
+        links_1.appendTo(left.children("#links"));
+        links_2.appendTo(left.children("#links"));
+
+        left.children("#links").find("table > tbody > tr > td:nth-child(2)").each(function () {
+            var $this = $(this);
+            var link = $this.children("a");
+            var provider = $this.html().substring($this.html().lastIndexOf(";") + 1).trim();
+            link.text(provider);
+            $this.html(link);
+        });
 
     } else {
+        body.attr("id", "browse");
         $(content).appendTo("#content");
     }
 });
