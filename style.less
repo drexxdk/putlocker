@@ -23,7 +23,7 @@ body {
 
 
 
-div + #main {
+script + #main {
     > #content {
         overflow: auto;
         .flex-display(inline-flex);
@@ -233,16 +233,11 @@ noscript + #main > #content {
                                 background-color: orange;
                                 height: 100%;
 
-                                > iframe:first-of-type {
+                                > iframe {
                                     display: block;
                                     background-color: aqua;
                                     width:100%;
                                     height:100%;
-                                }
-
-                                > iframe:last-of-type {
-                                    display: none;
-                                    background-color: pink;
                                 }
                             }
                         }

@@ -17,7 +17,7 @@ body > img,
 body > table {
   display: none;
 }
-div + #main > #content {
+script + #main > #content {
   overflow: auto;
   display: -webkit-inline-flex;
   display: -moz-inline-flex;
@@ -25,34 +25,34 @@ div + #main > #content {
   display: -ms-inline-flex;
   display: inline-flex;
 }
-div + #main > #content > .content-box {
+script + #main > #content > .content-box {
   width: initial !important;
   border: initial !important;
   background-color: initial !important;
   margin: 0 auto;
   line-height: 0;
 }
-div + #main > #content > .content-box > p,
-div + #main > #content > .content-box > h2,
-div + #main > #content > .content-box > div,
-div + #main > #content > .content-box > table {
+script + #main > #content > .content-box > p,
+script + #main > #content > .content-box > h2,
+script + #main > #content > .content-box > div,
+script + #main > #content > .content-box > table {
   display: none;
 }
-div + #main > #content > .content-box > table:nth-last-of-type(2),
-div + #main > #content > .content-box > table:last-of-type {
+script + #main > #content > .content-box > table:nth-last-of-type(2),
+script + #main > #content > .content-box > table:last-of-type {
   display: block;
 }
-div + #main > #content > .content-box > table:nth-last-of-type(2) {
+script + #main > #content > .content-box > table:nth-last-of-type(2) {
   width: initial;
 }
-div + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr {
+script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
   display: -ms-flex;
   display: flex;
 }
-div + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td {
+script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td {
   -webkit-flex-grow: 1;
   -moz-flex-grow: 1;
   -ms-flex-grow: 1;
@@ -67,10 +67,10 @@ div + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr >
   padding-left: 10px !important;
   padding-right: 10px !important;
 }
-div + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td > a {
+script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td > a {
   display: block;
 }
-div + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td > a > img {
+script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td > a > img {
   padding: initial !important;
   border: initial !important;
   width: 130px;
@@ -78,11 +78,11 @@ div + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr >
   z-index: 1;
   position: relative;
 }
-div + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td > div {
+script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td > div {
   width: 130px !important;
   padding-top: 0 !important;
 }
-div + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td > div > a {
+script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td > div > a {
   display: block;
   padding: 8px 5px;
   color: white;
@@ -94,7 +94,7 @@ div + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr >
   text-overflow: ellipsis;
   font-size: 12px;
 }
-div + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td:hover::before {
+script + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr > td:hover::before {
   content: '';
   position: absolute;
   top: 10px;
@@ -106,7 +106,7 @@ div + #main > #content > .content-box > table:nth-last-of-type(2) > tbody > tr >
   -moz-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
 }
-div + #main > #content > .content-box > table:last-of-type {
+script + #main > #content > .content-box > table:last-of-type {
   padding: 10px 0;
   display: -webkit-flex;
   display: -moz-flex;
@@ -114,10 +114,10 @@ div + #main > #content > .content-box > table:last-of-type {
   display: -ms-flex;
   display: flex;
 }
-div + #main > #content > .content-box > table:last-of-type > tbody {
+script + #main > #content > .content-box > table:last-of-type > tbody {
   margin: 0 auto;
 }
-div + #main > #content > .content-box > table:last-of-type > tbody > tr > td {
+script + #main > #content > .content-box > table:last-of-type > tbody > tr > td {
   width: initial !important;
   height: initial !important;
   padding-left: initial !important;
@@ -133,22 +133,22 @@ div + #main > #content > .content-box > table:last-of-type > tbody > tr > td {
 	background-clip:         padding-box;*/
   overflow: hidden;
 }
-div + #main > #content > .content-box > table:last-of-type > tbody > tr > td > a {
+script + #main > #content > .content-box > table:last-of-type > tbody > tr > td > a {
   margin: -5px -10px;
   padding: 5px 10px;
   background-color: #606060;
   display: block;
   color: white !important;
 }
-div + #main > #content > .content-box > table:last-of-type > tbody > tr > td > a:hover {
+script + #main > #content > .content-box > table:last-of-type > tbody > tr > td > a:hover {
   background-color: #505050;
 }
-div + #main > #content > .content-box > h1,
-div + #main > #content > .content-box > table,
-div + #main > #content > .content-box > form {
+script + #main > #content > .content-box > h1,
+script + #main > #content > .content-box > table,
+script + #main > #content > .content-box > form {
   line-height: initial;
 }
-div + #main > #content > .content-box > h1 {
+script + #main > #content > .content-box > h1 {
   font-family: sans-serif;
   border-bottom: initial;
   padding-top: initial;
@@ -159,11 +159,11 @@ div + #main > #content > .content-box > h1 {
   color: white;
   font-size: 16px;
 }
-div + #main > #content > .content-box > h1 > strong > font {
+script + #main > #content > .content-box > h1 > strong > font {
   color: white;
 }
-div + #main > #content > .content-box > .table,
-div + #main > #content > .content-box > .table2 {
+script + #main > #content > .content-box > .table,
+script + #main > #content > .content-box > .table2 {
   font-size: initial;
   font-family: sans-serif;
 }
@@ -250,15 +250,11 @@ noscript + #main > #content #right #embed > table > tbody > tr:last-child > td >
   background-color: orange;
   height: 100%;
 }
-noscript + #main > #content #right #embed > table > tbody > tr:last-child > td > .video > iframe:first-of-type {
+noscript + #main > #content #right #embed > table > tbody > tr:last-child > td > .video > iframe {
   display: block;
   background-color: aqua;
   width: 100%;
   height: 100%;
-}
-noscript + #main > #content #right #embed > table > tbody > tr:last-child > td > .video > iframe:last-of-type {
-  display: none;
-  background-color: pink;
 }
 #main {
   display: -webkit-flex;
