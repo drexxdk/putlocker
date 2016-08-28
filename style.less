@@ -36,7 +36,7 @@ body {
 
         > .content-box {
             width: 100% !important;
-            max-width:750px;
+            max-width: 750px;
             border: initial !important;
             background-color: initial !important;
             margin: 0 auto;
@@ -71,7 +71,7 @@ body {
                             padding-bottom: 10px !important;
                             padding-left: 10px !important;
                             padding-right: 10px !important;
-                            max-width:20%;
+                            max-width: 20%;
 
                             > a {
                                 display: block;
@@ -194,7 +194,7 @@ body {
                                 border: 1px solid black;
 
                                 > table {
-                                    width:100%;
+                                    width: 100%;
                                 }
 
                                 > input[type=text] {
@@ -287,12 +287,32 @@ body {
                 border-top: 1px dotted #909090;
             }
 
+            > h2 {
+                background-color:#202020!important;
+                border-top:initial!important;
+                border-bottom:initial!important;
+                font-size:16px;
+                padding:initial!important;
+
+                > a {
+                    padding:10px;
+                    display:block;
+                    text-align:center;
+                }
+
+                > a:hover {
+                    background-color:#101010;
+                }
+            }
+
             > table {
+                table-layout: fixed;
+
                 > tbody {
 
                     > tr {
                         > td:first-child,
-                        > td:last-child {
+                        > td:nth-child(3) {
                             display: none;
                         }
 
@@ -303,6 +323,23 @@ body {
                             > a {
                                 padding: 10px;
                                 display: block;
+                                .flex-display();
+
+                                > span {
+                                    white-space: nowrap;
+                                }
+
+                                > span:first-child {
+                                    font-weight: bold;
+                                }
+
+                                > span:nth-child(2) {
+                                    color: #ccc;
+                                    margin-left: 5px;
+                                    .flex-grow();
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                }
                             }
 
                             > a:hover {

@@ -272,8 +272,26 @@ body .table2 {
 #video > #main > #content #left > #links > table + table {
   border-top: 1px dotted #909090;
 }
+#video > #main > #content #left > #links > h2 {
+  background-color: #202020!important;
+  border-top: initial!important;
+  border-bottom: initial!important;
+  font-size: 16px;
+  padding: initial!important;
+}
+#video > #main > #content #left > #links > h2 > a {
+  padding: 10px;
+  display: block;
+  text-align: center;
+}
+#video > #main > #content #left > #links > h2 > a:hover {
+  background-color: #101010;
+}
+#video > #main > #content #left > #links > table {
+  table-layout: fixed;
+}
 #video > #main > #content #left > #links > table > tbody > tr > td:first-child,
-#video > #main > #content #left > #links > table > tbody > tr > td:last-child {
+#video > #main > #content #left > #links > table > tbody > tr > td:nth-child(3) {
   display: none;
 }
 #video > #main > #content #left > #links > table > tbody > tr > td:nth-child(2) {
@@ -283,6 +301,27 @@ body .table2 {
 #video > #main > #content #left > #links > table > tbody > tr > td:nth-child(2) > a {
   padding: 10px;
   display: block;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+}
+#video > #main > #content #left > #links > table > tbody > tr > td:nth-child(2) > a > span {
+  white-space: nowrap;
+}
+#video > #main > #content #left > #links > table > tbody > tr > td:nth-child(2) > a > span:first-child {
+  font-weight: bold;
+}
+#video > #main > #content #left > #links > table > tbody > tr > td:nth-child(2) > a > span:nth-child(2) {
+  color: #ccc;
+  margin-left: 5px;
+  -webkit-flex-grow: 0;
+  -moz-flex-grow: 0;
+  -ms-flex-grow: 0;
+  flex-grow: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #video > #main > #content #left > #links > table > tbody > tr > td:nth-child(2) > a:hover {
   background-color: #404040;
