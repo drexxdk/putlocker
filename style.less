@@ -36,12 +36,12 @@ body {
 
         > .content-box {
             width: 100% !important;
-            max-width: 750px;
             border: initial !important;
             background-color: initial !important;
             margin: 0 auto;
             line-height: 0;
             .flex-grow(1);
+            overflow: auto;
 
             > p,
             > h2,
@@ -53,7 +53,11 @@ body {
 
             > table:nth-last-of-type(2),
             > table:last-of-type {
-                display: block;
+                .flex-display();
+
+                > tbody {
+                    margin: 0 auto;
+                }
             }
 
             > table:nth-last-of-type(2) {
@@ -121,10 +125,8 @@ body {
 
             > table:last-of-type {
                 padding: 10px 0;
-                .flex-display();
 
                 > tbody {
-                    margin: 0 auto;
 
                     > tr > td {
                         width: initial !important;
@@ -235,10 +237,17 @@ body {
         overflow: auto;
         color: white;
         border-right: 2px solid black;
+        .flex-shrink(0);
 
 
         > * {
             .flex-shrink(0);
+        }
+
+        @media all and (max-height:600px) {
+            #info {
+                display: none !important;
+            }
         }
 
         > #info {
@@ -276,81 +285,91 @@ body {
         }
 
         > #links {
+            .flex-grow(1);
             background-color: #606060;
+            position: relative;
 
+            > div {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                overflow: auto;
 
-            a {
-                color: white;
-            }
-
-            > table + table {
-                border-top: 1px dotted #909090;
-            }
-
-            > h2 {
-                background-color:#202020!important;
-                border-top:initial!important;
-                border-bottom:initial!important;
-                font-size:16px;
-                padding:initial!important;
-
-                > a {
-                    padding:10px;
-                    display:block;
-                    text-align:center;
+                a {
+                    color: white;
                 }
 
-                > a:hover {
-                    background-color:#101010;
+                > table + table {
+                    border-top: 1px dotted #909090;
                 }
-            }
 
-            > table {
-                table-layout: fixed;
+                > h2 {
+                    background-color: #202020 !important;
+                    border-top: initial !important;
+                    border-bottom: initial !important;
+                    font-size: 16px;
+                    padding: initial !important;
 
-                > tbody {
-
-                    > tr {
-                        > td:first-child,
-                        > td:nth-child(3) {
-                            display: none;
-                        }
-
-                        > td:nth-child(2) {
-                            padding: initial !important;
-                            border-bottom: initial !important;
-
-                            > a {
-                                padding: 10px;
-                                display: block;
-                                .flex-display();
-
-                                > span {
-                                    white-space: nowrap;
-                                }
-
-                                > span:first-child {
-                                    font-weight: bold;
-                                }
-
-                                > span:nth-child(2) {
-                                    color: #ccc;
-                                    margin-left: 5px;
-                                    .flex-grow();
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;
-                                }
-                            }
-
-                            > a:hover {
-                                background-color: #404040;
-                            }
-                        }
+                    > a {
+                        padding: 10px;
+                        display: block;
+                        text-align: center;
                     }
 
+                    > a:hover {
+                        background-color: #101010;
+                    }
+                }
 
-                    > tr:not(:empty) + tr:not(:empty) > td {
-                        border-top: 1px dotted #909090;
+                > table {
+                    table-layout: fixed;
+
+                    > tbody {
+
+                        > tr {
+                            > td:first-child,
+                            > td:nth-child(3) {
+                                display: none;
+                            }
+
+                            > td:nth-child(2) {
+                                padding: initial !important;
+                                border-bottom: initial !important;
+
+                                > a {
+                                    padding: 10px;
+                                    display: block;
+                                    .flex-display();
+
+                                    > span {
+                                        white-space: nowrap;
+                                    }
+
+                                    > span:first-child {
+                                        font-weight: bold;
+                                    }
+
+                                    > span:nth-child(2) {
+                                        color: #ccc;
+                                        margin-left: 5px;
+                                        .flex-grow();
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                    }
+                                }
+
+                                > a:hover {
+                                    background-color: #404040;
+                                }
+                            }
+                        }
+
+
+                        > tr:not(:empty) + tr:not(:empty) > td {
+                            border-top: 1px dotted #909090;
+                        }
                     }
                 }
             }
@@ -381,37 +400,90 @@ body {
 
         > #embed {
             height: 100%;
-            .flex-display();
+            /*.flex-display();*/
             background-color: black;
+            overflow: hidden;
+            padding: 10px;
 
-            > table {
+            .ui-resizable {
+                > .ui-resizable-e {
+                    // right
+                    cursor: e-resize;
+                    width: 10px;
+                    right: -5px;
+                    top: 25px;
+                    bottom:25px;
+                }
+
+                > .ui-resizable-s {
+                    // bottom
+                    cursor: s-resize;
+                    height: 10px;
+                    bottom: -5px;
+                    left: 25px;
+                    right:25px;
+                }
+
+                > .ui-resizable-e,
+                > .ui-resizable-s {
+                    .border-radius(2px);
+                }
+
+                > .ui-resizable-e:hover,
+                > .ui-resizable-s:hover {
+                    background-color:#808080;
+                }
+
+                .ui-resizable-se {
+                    // right + bottom
+                    cursor: se-resize;
+                    position: absolute;
+                    right: 2px;
+                    bottom: -3px;
+                    width: 15px;
+                    height: 15px;
+                    width: 0;
+                    height: 0;
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                    border-left: 10px solid #202020;
+                    .rotate(45deg);
+                }
+
+                .ui-resizable-se:hover {
+                    border-left: 10px solid #808080;
+                }
+
+                .ui-resizable-handle {
+                    position: absolute;
+                    display: block;
+                    -ms-touch-action: none;
+                    touch-action: none;
+                }
+            }
+
+            > div {
+                min-width: 300px;
+                min-height: 300px;
+                max-width: 100%;
+                max-height: 100%;
+                position: relative;
+                padding: 10px;
+                background: white;
+                position: relative;
+                width: 100%;
                 height: 100%;
 
-                > tbody {
-                    > tr:first-child {
-                        display: none;
-                    }
-
-                    > tr:last-child {
-                        > td {
-                            > .video {
-                                padding-top: initial !important;
-                                padding-bottom: initial !important;
-                                height: 100%;
-
-                                > iframe {
-                                    display: block;
-                                    width: 100%;
-                                    height: 100%;
-                                    overflow: auto;
-                                }
-
-                                > iframe:nth-of-type(2) {
-                                    display: none;
-                                }
-                            }
-                        }
-                    }
+                > iframe {
+                    position: absolute;
+                    top: 15px;
+                    bottom: 15px;
+                    left: 15px;
+                    right: 15px;
+                    display: block;
+                    overflow: auto;
+                    width: calc(~"100% - 30px");
+                    height: calc(~"100% - 30px");
                 }
             }
         }

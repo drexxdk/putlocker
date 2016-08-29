@@ -33,7 +33,6 @@ body .table2 {
 }
 #browse > #main > #content > .content-box {
   width: 100% !important;
-  max-width: 750px;
   border: initial !important;
   background-color: initial !important;
   margin: 0 auto;
@@ -42,6 +41,7 @@ body .table2 {
   -moz-flex-grow: 1;
   -ms-flex-grow: 1;
   flex-grow: 1;
+  overflow: auto;
 }
 #browse > #main > #content > .content-box > p,
 #browse > #main > #content > .content-box > h2,
@@ -51,7 +51,15 @@ body .table2 {
 }
 #browse > #main > #content > .content-box > table:nth-last-of-type(2),
 #browse > #main > #content > .content-box > table:last-of-type {
-  display: block;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+}
+#browse > #main > #content > .content-box > table:nth-last-of-type(2) > tbody,
+#browse > #main > #content > .content-box > table:last-of-type > tbody {
+  margin: 0 auto;
 }
 #browse > #main > #content > .content-box > table:nth-last-of-type(2) {
   width: initial;
@@ -120,14 +128,6 @@ body .table2 {
 }
 #browse > #main > #content > .content-box > table:last-of-type {
   padding: 10px 0;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: -ms-flex;
-  display: flex;
-}
-#browse > #main > #content > .content-box > table:last-of-type > tbody {
-  margin: 0 auto;
 }
 #browse > #main > #content > .content-box > table:last-of-type > tbody > tr > td {
   width: initial !important;
@@ -230,12 +230,21 @@ body .table2 {
   overflow: auto;
   color: white;
   border-right: 2px solid black;
+  -webkit-flex-shrink: 0;
+  -moz-flex-shrink: 0;
+  -ms-flex-shrink: 0;
+  flex-shrink: 0;
 }
 #video > #main > #content #left > * {
   -webkit-flex-shrink: 0;
   -moz-flex-shrink: 0;
   -ms-flex-shrink: 0;
   flex-shrink: 0;
+}
+@media all and (max-height: 600px) {
+  #video > #main > #content #left #info {
+    display: none !important;
+  }
 }
 #video > #main > #content #left > #info {
   display: -webkit-flex;
@@ -264,41 +273,54 @@ body .table2 {
   font-weight: initial !important;
 }
 #video > #main > #content #left > #links {
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  -ms-flex-grow: 1;
+  flex-grow: 1;
   background-color: #606060;
+  position: relative;
 }
-#video > #main > #content #left > #links a {
+#video > #main > #content #left > #links > div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+#video > #main > #content #left > #links > div a {
   color: white;
 }
-#video > #main > #content #left > #links > table + table {
+#video > #main > #content #left > #links > div > table + table {
   border-top: 1px dotted #909090;
 }
-#video > #main > #content #left > #links > h2 {
-  background-color: #202020!important;
-  border-top: initial!important;
-  border-bottom: initial!important;
+#video > #main > #content #left > #links > div > h2 {
+  background-color: #202020 !important;
+  border-top: initial !important;
+  border-bottom: initial !important;
   font-size: 16px;
-  padding: initial!important;
+  padding: initial !important;
 }
-#video > #main > #content #left > #links > h2 > a {
+#video > #main > #content #left > #links > div > h2 > a {
   padding: 10px;
   display: block;
   text-align: center;
 }
-#video > #main > #content #left > #links > h2 > a:hover {
+#video > #main > #content #left > #links > div > h2 > a:hover {
   background-color: #101010;
 }
-#video > #main > #content #left > #links > table {
+#video > #main > #content #left > #links > div > table {
   table-layout: fixed;
 }
-#video > #main > #content #left > #links > table > tbody > tr > td:first-child,
-#video > #main > #content #left > #links > table > tbody > tr > td:nth-child(3) {
+#video > #main > #content #left > #links > div > table > tbody > tr > td:first-child,
+#video > #main > #content #left > #links > div > table > tbody > tr > td:nth-child(3) {
   display: none;
 }
-#video > #main > #content #left > #links > table > tbody > tr > td:nth-child(2) {
+#video > #main > #content #left > #links > div > table > tbody > tr > td:nth-child(2) {
   padding: initial !important;
   border-bottom: initial !important;
 }
-#video > #main > #content #left > #links > table > tbody > tr > td:nth-child(2) > a {
+#video > #main > #content #left > #links > div > table > tbody > tr > td:nth-child(2) > a {
   padding: 10px;
   display: block;
   display: -webkit-flex;
@@ -307,13 +329,13 @@ body .table2 {
   display: -ms-flex;
   display: flex;
 }
-#video > #main > #content #left > #links > table > tbody > tr > td:nth-child(2) > a > span {
+#video > #main > #content #left > #links > div > table > tbody > tr > td:nth-child(2) > a > span {
   white-space: nowrap;
 }
-#video > #main > #content #left > #links > table > tbody > tr > td:nth-child(2) > a > span:first-child {
+#video > #main > #content #left > #links > div > table > tbody > tr > td:nth-child(2) > a > span:first-child {
   font-weight: bold;
 }
-#video > #main > #content #left > #links > table > tbody > tr > td:nth-child(2) > a > span:nth-child(2) {
+#video > #main > #content #left > #links > div > table > tbody > tr > td:nth-child(2) > a > span:nth-child(2) {
   color: #ccc;
   margin-left: 5px;
   -webkit-flex-grow: 0;
@@ -323,10 +345,10 @@ body .table2 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-#video > #main > #content #left > #links > table > tbody > tr > td:nth-child(2) > a:hover {
+#video > #main > #content #left > #links > div > table > tbody > tr > td:nth-child(2) > a:hover {
   background-color: #404040;
 }
-#video > #main > #content #left > #links > table > tbody > tr:not(:empty) + tr:not(:empty) > td {
+#video > #main > #content #left > #links > div > table > tbody > tr:not(:empty) + tr:not(:empty) > td {
   border-top: 1px dotted #909090;
 }
 #video > #main > #content #right {
@@ -361,32 +383,85 @@ body .table2 {
 }
 #video > #main > #content #right > #embed {
   height: 100%;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: -ms-flex;
-  display: flex;
+  /*.flex-display();*/
   background-color: black;
+  overflow: hidden;
+  padding: 10px;
 }
-#video > #main > #content #right > #embed > table {
-  height: 100%;
+#video > #main > #content #right > #embed .ui-resizable > .ui-resizable-e {
+  cursor: e-resize;
+  width: 10px;
+  right: -5px;
+  top: 25px;
+  bottom: 25px;
 }
-#video > #main > #content #right > #embed > table > tbody > tr:first-child {
-  display: none;
+#video > #main > #content #right > #embed .ui-resizable > .ui-resizable-s {
+  cursor: s-resize;
+  height: 10px;
+  bottom: -5px;
+  left: 25px;
+  right: 25px;
 }
-#video > #main > #content #right > #embed > table > tbody > tr:last-child > td > .video {
-  padding-top: initial !important;
-  padding-bottom: initial !important;
-  height: 100%;
+#video > #main > #content #right > #embed .ui-resizable > .ui-resizable-e,
+#video > #main > #content #right > #embed .ui-resizable > .ui-resizable-s {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  /*-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;*/
 }
-#video > #main > #content #right > #embed > table > tbody > tr:last-child > td > .video > iframe {
+#video > #main > #content #right > #embed .ui-resizable > .ui-resizable-e:hover,
+#video > #main > #content #right > #embed .ui-resizable > .ui-resizable-s:hover {
+  background-color: #808080;
+}
+#video > #main > #content #right > #embed .ui-resizable .ui-resizable-se {
+  cursor: se-resize;
+  position: absolute;
+  right: 2px;
+  bottom: -3px;
+  width: 15px;
+  height: 15px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #202020;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+#video > #main > #content #right > #embed .ui-resizable .ui-resizable-se:hover {
+  border-left: 10px solid #808080;
+}
+#video > #main > #content #right > #embed .ui-resizable .ui-resizable-handle {
+  position: absolute;
   display: block;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+#video > #main > #content #right > #embed > div {
+  min-width: 300px;
+  min-height: 300px;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 10px;
+  background: white;
+  position: relative;
   width: 100%;
   height: 100%;
-  overflow: auto;
 }
-#video > #main > #content #right > #embed > table > tbody > tr:last-child > td > .video > iframe:nth-of-type(2) {
-  display: none;
+#video > #main > #content #right > #embed > div > iframe {
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  display: block;
+  overflow: auto;
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
 }
 #main {
   display: -webkit-flex;

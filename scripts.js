@@ -31,10 +31,10 @@ $(function () {
         $("#content").append(
             '<div id="left">' +
                 '<div id="info"></div>' +
-                '<div id="links"></div>' + 
+                '<div id="links"><div></div></div>' + 
             '</div>' +
             '<div id="right">' +
-                '<div id="embed"></div>' +
+                '<div id="embed"><div></div></div>' +
             '</div>'
             );
         var left = $("#left");
@@ -53,7 +53,7 @@ $(function () {
                     return false;
                 }
                 if(started) {
-                    $(value).appendTo(left.children("#links"));
+                    $(value).appendTo(left.children("#links").children("div"));
                 }
                 var ignoreFirst = $(value).hasClass("addthis_toolbox");
                 if(ignoreFirst) {
@@ -61,16 +61,16 @@ $(function () {
                 }
             });
         } else {
-            var embed = content.find("table:first-of-type + h2 + table");
+            var embed = content.find("table:first-of-type + h2 + table iframe:first-of-type");
             var links_1 = content.find("#MarketGidScriptRootC9737 + h2 + table");
             var links_2 = content.find("#MarketGidScriptRootC9737 + h2 + table + table");
 
-            embed.appendTo($("#embed"));
-
-            links_1.appendTo(left.children("#links"));
-            links_2.appendTo(left.children("#links"));
-
-            
+            embed.appendTo($("#embed > div"));
+            $.getScript('https://code.jquery.com/ui/1.12.0/jquery-ui.js', function () {
+                $("#embed > div").resizable();
+            });
+            links_1.appendTo(left.children("#links").children("div"));
+            links_2.appendTo(left.children("#links").children("div"));
         }
 
         left.children("#links").find("table > tbody > tr > td:nth-child(2)").each(function () {
